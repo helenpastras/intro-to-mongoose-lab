@@ -37,12 +37,10 @@ const menuOptions = async () => {
                 break;
             case '5':
                 running = false;
-                console.log("Thank you. Goodbye!");
-                mongoose.disconnect();
-                 break;    
-
+                console.log("Exiting...Thank you. Goodbye!");
+                await mongoose.connection.close();
+                 process.exit(0);    
             }
-
     }
 }
 
